@@ -24,7 +24,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xTB-Ln-Oqx">
-                        <rect key="frame" x="16" y="10" width="287" height="47"/>
+                        <rect key="frame" x="16" y="10" width="288" height="47"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -35,7 +35,6 @@
                             <constraint firstAttribute="width" constant="31" id="uzQ-Fu-EXE"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="38"/>
-                        <color key="tintColor" systemColor="systemPinkColor"/>
                         <state key="normal" title="+">
                             <color key="titleColor" systemColor="systemRedColor"/>
                         </state>
@@ -48,7 +47,7 @@
                     <constraint firstAttribute="bottomMargin" secondItem="3OS-FU-Zxf" secondAttribute="bottom" constant="6" id="FQz-Rm-sqM"/>
                     <constraint firstAttribute="bottom" secondItem="rM6-1v-u4b" secondAttribute="bottom" constant="17" id="Gs8-wK-0zb"/>
                     <constraint firstItem="xTB-Ln-Oqx" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="Sry-f2-e51"/>
-                    <constraint firstAttribute="trailing" secondItem="xTB-Ln-Oqx" secondAttribute="trailing" constant="17" id="VxQ-Wg-ibz"/>
+                    <constraint firstAttribute="trailing" secondItem="xTB-Ln-Oqx" secondAttribute="trailing" constant="16" id="VxQ-Wg-ibz"/>
                     <constraint firstItem="3OS-FU-Zxf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="XSq-LA-QrK"/>
                     <constraint firstItem="rM6-1v-u4b" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="66" id="YDh-sE-Env"/>
                     <constraint firstItem="rM6-1v-u4b" firstAttribute="leading" secondItem="3OS-FU-Zxf" secondAttribute="trailing" constant="98" id="Z0z-19-kjo"/>
@@ -68,9 +67,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <systemColor name="systemPinkColor">
-            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

@@ -44,7 +44,7 @@ class FavoritesArticlesTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let pageContent = requestArticle[indexPath.row]!.content else { return }
-        segueToWebViewController(pageContent: requestArticle[indexPath.row]!.content!)
+        segueToWebViewController(pageContent: pageContent)
     }
     
     func requestData() {
