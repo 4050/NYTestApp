@@ -43,22 +43,20 @@ class FavoritesArticlesTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let url = URL(string: requestArticle[indexPath.row]!.url!) else { return }
-        segueToSafari(url: url)
+        guard let pageContent = requestArticle[indexPath.row]!.content else { return }
+        segueToWebViewController(pageContent: requestArticle[indexPath.row]!.content!)
     }
     
     func requestData() {
         requestArticle = articleStorageModel.getActicles()
     }
     
-    func segueToSafari(url: URL) {
-        let config = SFSafariViewController.Configuration()
-        config.entersReaderIfAvailable = true
-        let vc = SFSafariViewController(url: url, configuration: config)
-        present(vc, animated: true)
+    func segueToWebViewController(pageContent: String) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        guard let webViewController = storyboard.instantiateViewController(identifier: "WebViewController") as? WebViewController else { return }
+        
+        webViewController.stringURL = pageContent
+        show(webViewController, sender: nil)
     }
-    
-    
-    
 }
 

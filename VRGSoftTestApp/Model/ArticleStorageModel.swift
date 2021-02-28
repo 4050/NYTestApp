@@ -9,7 +9,8 @@ import Foundation
 
 class ArticleStorageModel {
     
-    private let storageArticle = StorageAnswerService()
+    private let storageArticle = ArticleStorageService()
+    private let contentLoaderService = ContentLoaderService()
     
     func getActicles() -> [ManagedArticle?] {
         let articles = storageArticle.getArticles()
@@ -18,8 +19,12 @@ class ArticleStorageModel {
     
     func saveArticle(article: ArticleModel) {
         storageArticle.saveArticles(article: article)
-        print(article)
     }
     
+    func getPageContent(url: String, completion: @escaping (String?) -> Void) {
+        contentLoaderService.getPageContent(url: url) {(response) in
+            completion(response)
+        }
+    }
 }
 

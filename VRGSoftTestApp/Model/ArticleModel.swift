@@ -15,4 +15,5 @@ struct ArticleModel: Codable {
     var url: String?
     var title: String?
     var published_date: String?
+    var content: String?
 }

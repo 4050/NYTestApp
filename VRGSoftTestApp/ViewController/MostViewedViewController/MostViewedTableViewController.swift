@@ -65,7 +65,6 @@ extension MostViewedTableViewController: ArticleTableViewCellProtocol {
         guard let cellTag = tableView.indexPath(for: cell)?.row else { return }
         let article = getArticle(tag: cellTag)
         articleStorageModel.saveArticle(article: article)
-        
     }
     
     func getArticle(tag: Int) -> ArticleModel {

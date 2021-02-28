@@ -7,12 +7,16 @@
 
 import UIKit
 import SafariServices
+import WebKit
 
-class MostEmailedTableViewController: UITableViewController {
+class MostEmailedTableViewController: UITableViewController, WKUIDelegate, WKNavigationDelegate {
     
     private let mostEmailedModel = MostEmailedModel()
     private let articleStorageModel = ArticleStorageModel()
     private var requestArticle = [ArticleModel]()
+    
+    public var pageContent: String?
+    public var stringURL: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,21 +56,26 @@ class MostEmailedTableViewController: UITableViewController {
         let config = SFSafariViewController.Configuration()
         config.entersReaderIfAvailable = true
         let vc = SFSafariViewController(url: url, configuration: config)
+        
         present(vc, animated: true)
     }
+    
+    
 }
 
 extension MostEmailedTableViewController: ArticleTableViewCellProtocol {
     
     func didTapFavoritesButton(cell: ArticleTableViewCell) {
         guard let cellTag = tableView.indexPath(for: cell)?.row else { return }
-        let article = getArticle(tag: cellTag)
-        articleStorageModel.saveArticle(article: article)
         
-    }
-    
-    func getArticle(tag: Int) -> ArticleModel {
-        let article = requestArticle[tag]
-        return article
+        var article = requestArticle[cellTag]
+        self.articleStorageModel.getPageContent(url: article.url!, completion: {[weak self] (response) in
+            self?.pageContent = response
+            article.content = self?.pageContent
+            self?.articleStorageModel.saveArticle(article: article)
+        })
     }
 }
+
+
+

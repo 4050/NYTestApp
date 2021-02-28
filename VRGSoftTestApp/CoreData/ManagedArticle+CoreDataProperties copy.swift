@@ -2,7 +2,7 @@
 //  ManagedArticle+CoreDataProperties.swift
 //  
 //
-//  Created by Stanislav on 26.02.2021.
+//  Created by Stanislav on 28.02.2021.
 //
 //
 
@@ -19,5 +19,6 @@ extension ManagedArticle {
     @NSManaged public var published_date: String?
     @NSManaged public var title: String?
     @NSManaged public var url: String?
+    @NSManaged public var content: String?
 
 }

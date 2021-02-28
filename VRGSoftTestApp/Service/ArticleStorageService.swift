@@ -9,11 +9,11 @@ import Foundation
 import CoreData
 
 protocol PersistenceStore {
-    func getArticles() -> [ManagedArticle?]
-    func saveArticles(article: ArticleModel?)
+    func getArticles() -> [ManagedArticle]
+    func saveArticles(article: ArticleModel)
 }
 
-class StorageAnswerService: PersistenceStore {
+class ArticleStorageService: PersistenceStore {
     
     lazy var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "ArticleWarehouse")
@@ -28,7 +28,7 @@ class StorageAnswerService: PersistenceStore {
     lazy var context = persistentContainer.viewContext
     lazy var backgroundMOC = persistentContainer.newBackgroundContext()
     
-    func getArticles() -> [ManagedArticle?] {
+    func getArticles() -> [ManagedArticle] {
         context.automaticallyMergesChangesFromParent = true
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "ManagedArticle")
         do {
@@ -41,22 +41,24 @@ class StorageAnswerService: PersistenceStore {
         }
     }
     
-    func saveArticles(article: ArticleModel?) {
+    func saveArticles(article: ArticleModel) {
         guard let entity =
                 NSEntityDescription.entity(forEntityName: "ManagedArticle", in: context) else { return }
         guard let taskObject =
                 NSManagedObject(entity: entity, insertInto: backgroundMOC) as? ManagedArticle else { return }
         backgroundMOC.performAndWait {
-            taskObject.published_date = article?.published_date
-            taskObject.title = article?.title
-            taskObject.url = article?.url
+            taskObject.published_date = article.published_date
+            taskObject.title = article.title
+            taskObject.url = article.url
+            taskObject.content = article.content
+            
             do {
                 try backgroundMOC.save()
             } catch {
                 print(error)
             }
         }
-    }
+    }    
 }
 
 

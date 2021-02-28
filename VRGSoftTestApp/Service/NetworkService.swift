@@ -24,7 +24,6 @@ class NetworkService {
             do {
                 let objects = try decoder.decode(ResponseModel.self, from: data)
                 completion(objects)
-                
             } catch let jsonError {
                 print("Failed to decode JSON", jsonError)
                 completion(nil)

@@ -2,7 +2,7 @@
 //  ManagedArticle+CoreDataClass.swift
 //  
 //
-//  Created by Stanislav on 26.02.2021.
+//  Created by Stanislav on 28.02.2021.
 //
 //
 
