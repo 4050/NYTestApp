@@ -56,20 +56,19 @@ class MostViewedTableViewController: UITableViewController {
         let vc = SFSafariViewController(url: url, configuration: config)
         present(vc, animated: true)
     }
-
+    
 }
 
 extension MostViewedTableViewController: ArticleTableViewCellProtocol {
     
     func didTapFavoritesButton(cell: ArticleTableViewCell) {
         guard let cellTag = tableView.indexPath(for: cell)?.row else { return }
-        let article = getArticle(tag: cellTag)
-        articleStorageModel.saveArticle(article: article)
-    }
-    
-    func getArticle(tag: Int) -> ArticleModel {
-        let article = requestArticle[tag]
-        return article
+        var article = requestArticle[cellTag]
+        
+        self.articleStorageModel.getPageContent(url: article.url!, completion: {[weak self] (response) in
+            article.content = response
+            self?.articleStorageModel.saveArticle(article: article)
+        })
     }
 }
- 
+

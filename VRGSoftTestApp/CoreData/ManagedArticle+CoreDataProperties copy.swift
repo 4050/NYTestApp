@@ -13,7 +13,7 @@ import CoreData
 extension ManagedArticle {
 
     @nonobjc public class func fetchRequest() -> NSFetchRequest<ManagedArticle> {
-        return NSFetchRequest<ManagedArticle>(entityName: "ManagedArticle")
+        return NSFetchRequest<ManagedArticle>(entityName: L10n.managedArticle)
     }
 
     @NSManaged public var published_date: String?

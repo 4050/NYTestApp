@@ -62,13 +62,11 @@ extension MostSharedTableViewController: ArticleTableViewCellProtocol {
     
     func didTapFavoritesButton(cell: ArticleTableViewCell) {
         guard let cellTag = tableView.indexPath(for: cell)?.row else { return }
-        let article = getArticle(tag: cellTag)
-        articleStorageModel.saveArticle(article: article)
+        var article = requestArticle[cellTag]
         
-    }
-    
-    func getArticle(tag: Int) -> ArticleModel {
-        let article = requestArticle[tag]
-        return article
+        self.articleStorageModel.getPageContent(url: article.url!, completion: {[weak self] (response) in
+            article.content = response
+            self?.articleStorageModel.saveArticle(article: article)
+        })
     }
 }

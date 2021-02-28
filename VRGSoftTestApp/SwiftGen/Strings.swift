@@ -10,8 +10,12 @@ import Foundation
 // swiftlint:disable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 internal enum L10n {
+  /// ArticleWarehouse
+  internal static let articleWarehouse = L10n.tr("URLStrings", "articleWarehouse")
   /// ArticleTableViewCell
   internal static let cellIdentifier = L10n.tr("URLStrings", "cellIdentifier")
+  /// ManagedArticle
+  internal static let managedArticle = L10n.tr("URLStrings", "managedArticle")
   /// https://api.nytimes.com/svc/mostpopular/v2/emailed/30.json?api-key=WX1nZ7rlTw2m0O9zGiIdNhcAoFvuAm1b
   internal static let mostEmailedURL = L10n.tr("URLStrings", "mostEmailedURL")
   /// https://api.nytimes.com/svc/mostpopular/v2/shared/30.json?api-key=WX1nZ7rlTw2m0O9zGiIdNhcAoFvuAm1b

@@ -11,3 +11,5 @@
 "mostViewedURL" = "https://api.nytimes.com/svc/mostpopular/v2/viewed/30.json?api-key=WX1nZ7rlTw2m0O9zGiIdNhcAoFvuAm1b";
 "cellIdentifier" = "ArticleTableViewCell";
 "tableViewCellNibName" = "ArticleTableViewCell";
+"managedArticle" = "ManagedArticle";
+"articleWarehouse" = "ArticleWarehouse";

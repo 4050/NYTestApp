@@ -14,9 +14,7 @@ class ContentLoaderService {
     
     func getPageContent(url: String, completion: @escaping (String?) -> Void) {
         AF.request(url).responseString { (response) in
-            DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
                 completion(response.value)
-            }
         }
     }
 }

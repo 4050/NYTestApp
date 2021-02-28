@@ -15,9 +15,6 @@ class MostEmailedTableViewController: UITableViewController, WKUIDelegate, WKNav
     private let articleStorageModel = ArticleStorageModel()
     private var requestArticle = [ArticleModel]()
     
-    public var pageContent: String?
-    public var stringURL: String?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.delegate = self
@@ -59,19 +56,16 @@ class MostEmailedTableViewController: UITableViewController, WKUIDelegate, WKNav
         
         present(vc, animated: true)
     }
-    
-    
 }
 
 extension MostEmailedTableViewController: ArticleTableViewCellProtocol {
     
     func didTapFavoritesButton(cell: ArticleTableViewCell) {
         guard let cellTag = tableView.indexPath(for: cell)?.row else { return }
-        
         var article = requestArticle[cellTag]
+        
         self.articleStorageModel.getPageContent(url: article.url!, completion: {[weak self] (response) in
-            self?.pageContent = response
-            article.content = self?.pageContent
+            article.content = response
             self?.articleStorageModel.saveArticle(article: article)
         })
     }

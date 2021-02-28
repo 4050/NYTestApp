@@ -16,7 +16,7 @@ protocol PersistenceStore {
 class ArticleStorageService: PersistenceStore {
     
     lazy var persistentContainer: NSPersistentContainer = {
-        let container = NSPersistentContainer(name: "ArticleWarehouse")
+        let container = NSPersistentContainer(name: L10n.articleWarehouse)
         container.loadPersistentStores(completionHandler: { (_, error) in
             if let error = error as NSError? {
                 fatalError("Unresolved error \(error), \(error.userInfo)")
@@ -30,7 +30,7 @@ class ArticleStorageService: PersistenceStore {
     
     func getArticles() -> [ManagedArticle] {
         context.automaticallyMergesChangesFromParent = true
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "ManagedArticle")
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: L10n.managedArticle)
         do {
             guard let fetchedObjects =
                     try context.fetch(fetchRequest) as? [ManagedArticle] else { return [ManagedArticle]() }
@@ -43,7 +43,7 @@ class ArticleStorageService: PersistenceStore {
     
     func saveArticles(article: ArticleModel) {
         guard let entity =
-                NSEntityDescription.entity(forEntityName: "ManagedArticle", in: context) else { return }
+                NSEntityDescription.entity(forEntityName: L10n.managedArticle, in: context) else { return }
         guard let taskObject =
                 NSManagedObject(entity: entity, insertInto: backgroundMOC) as? ManagedArticle else { return }
         backgroundMOC.performAndWait {
