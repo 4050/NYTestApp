@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ArticleTableViewCell" rowHeight="103" id="KGk-i7-Jjw" customClass="ArticleTableViewCell" customModule="VRGSoftTestApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="103"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="103"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3OS-FU-Zxf">
+                        <rect key="frame" x="16" y="65" width="159" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xTB-Ln-Oqx">
+                        <rect key="frame" x="16" y="10" width="287" height="47"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rM6-1v-u4b">
+                        <rect key="frame" x="273" y="66" width="31" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="31" id="uzQ-Fu-EXE"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="38"/>
+                        <color key="tintColor" systemColor="systemPinkColor"/>
+                        <state key="normal" title="+">
+                            <color key="titleColor" systemColor="systemRedColor"/>
+                        </state>
+                        <connections>
+                            <action selector="tapFavoritesButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Cl4-yZ-cYs"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottomMargin" secondItem="3OS-FU-Zxf" secondAttribute="bottom" constant="6" id="FQz-Rm-sqM"/>
+                    <constraint firstAttribute="bottom" secondItem="rM6-1v-u4b" secondAttribute="bottom" constant="17" id="Gs8-wK-0zb"/>
+                    <constraint firstItem="xTB-Ln-Oqx" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="Sry-f2-e51"/>
+                    <constraint firstAttribute="trailing" secondItem="xTB-Ln-Oqx" secondAttribute="trailing" constant="17" id="VxQ-Wg-ibz"/>
+                    <constraint firstItem="3OS-FU-Zxf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="XSq-LA-QrK"/>
+                    <constraint firstItem="rM6-1v-u4b" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="66" id="YDh-sE-Env"/>
+                    <constraint firstItem="rM6-1v-u4b" firstAttribute="leading" secondItem="3OS-FU-Zxf" secondAttribute="trailing" constant="98" id="Z0z-19-kjo"/>
+                    <constraint firstItem="3OS-FU-Zxf" firstAttribute="top" secondItem="xTB-Ln-Oqx" secondAttribute="bottom" constant="8" symbolic="YES" id="a22-nx-P4l"/>
+                    <constraint firstAttribute="trailing" secondItem="rM6-1v-u4b" secondAttribute="trailing" constant="16" id="axj-H4-dHq"/>
+                    <constraint firstItem="xTB-Ln-Oqx" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="d4E-eF-KyN"/>
+                    <constraint firstItem="3OS-FU-Zxf" firstAttribute="centerY" secondItem="rM6-1v-u4b" secondAttribute="centerY" constant="-0.5" id="tdR-ly-c2C"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="addFaforitesButton" destination="rM6-1v-u4b" id="l9H-3Z-h3c"/>
+                <outlet property="dateLabel" destination="3OS-FU-Zxf" id="rCx-SX-Oz0"/>
+                <outlet property="titleLabel" destination="xTB-Ln-Oqx" id="zyM-8I-lu8"/>
+            </connections>
+            <point key="canvasLocation" x="131.8840579710145" y="94.754464285714278"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

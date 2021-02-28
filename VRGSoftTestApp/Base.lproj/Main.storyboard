@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PcG-T4-Muj">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Most Viewed-->
+        <scene sceneID="cz9-eu-RPe">
+            <objects>
+                <tableViewController id="VXA-u1-aNm" customClass="MostViewedTableViewController" customModule="VRGSoftTestApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="1fP-eR-pgn">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <connections>
+                            <outlet property="dataSource" destination="VXA-u1-aNm" id="CVZ-8n-1fz"/>
+                            <outlet property="delegate" destination="VXA-u1-aNm" id="29F-k4-gx7"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Most Viewed" id="X32-7H-Vgi"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RgS-8s-Laf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-501" y="867"/>
+        </scene>
+        <!--Favorites-->
+        <scene sceneID="6Ng-gy-pUa">
+            <objects>
+                <tableViewController id="mZQ-xa-1Uy" customClass="FavoritesArticlesTableViewController" customModule="VRGSoftTestApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="P5Y-pv-lzC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <connections>
+                            <outlet property="dataSource" destination="mZQ-xa-1Uy" id="7BV-iT-Bj8"/>
+                            <outlet property="delegate" destination="mZQ-xa-1Uy" id="d6F-kw-Qhf"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Favorites" id="Cnu-0j-xJI"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UDh-NX-a0o" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-501" y="198"/>
+        </scene>
+        <!--Most Shared-->
+        <scene sceneID="Bj5-w2-MKN">
+            <objects>
+                <tableViewController id="iyv-1l-0Bd" customClass="MostSharedTableViewController" customModule="VRGSoftTestApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ujM-xX-v5C">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <connections>
+                            <outlet property="dataSource" destination="iyv-1l-0Bd" id="nYf-a4-JvM"/>
+                            <outlet property="delegate" destination="iyv-1l-0Bd" id="K2t-qL-rC6"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Most Shared" id="9Nj-aQ-fuM"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Q9-RQ-vPM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-501" y="-482"/>
+        </scene>
+        <!--Tab Bar View Controller-->
+        <scene sceneID="luo-es-9kT">
+            <objects>
+                <tabBarController id="PcG-T4-Muj" customClass="TabBarViewController" customModule="VRGSoftTestApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="PXY-2R-4Uq">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="iyv-1l-0Bd" kind="relationship" relationship="viewControllers" id="Q1K-83-7He"/>
+                        <segue destination="VXA-u1-aNm" kind="relationship" relationship="viewControllers" id="U0Z-Cd-KXb"/>
+                        <segue destination="gRj-L4-Yii" kind="relationship" relationship="viewControllers" id="i5Z-nL-7jm"/>
+                        <segue destination="mZQ-xa-1Uy" kind="relationship" relationship="viewControllers" id="YjT-bq-ZQI"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xqj-EX-tsF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2283" y="-148"/>
+        </scene>
+        <!--Most Emailed-->
+        <scene sceneID="nJ1-IU-PEz">
+            <objects>
+                <tableViewController title="Most Emailed" id="gRj-L4-Yii" customClass="MostEmailedTableViewController" customModule="VRGSoftTestApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="N5w-zz-2iX">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <connections>
+                            <outlet property="dataSource" destination="gRj-L4-Yii" id="pbx-I3-IBw"/>
+                            <outlet property="delegate" destination="gRj-L4-Yii" id="12V-MW-C3Y"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Most Emailed" id="7GT-wO-cKa"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oKl-YC-kh5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-501" y="-1149"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

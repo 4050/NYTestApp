@@ -1,0 +1,6 @@
+framework module Pods_VRGSoftTestApp_VRGSoftTestAppUITests {
+  umbrella header "Pods-VRGSoftTestApp-VRGSoftTestAppUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
